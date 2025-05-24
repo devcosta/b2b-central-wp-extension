@@ -8,7 +8,7 @@ interval = setInterval(function() {
         console.log("window.Store loaded, unsetting interval.")
         clearInterval(interval);
     }
-}, 5000);
+}, 1000);
 
 
 /** received event from content.js to send final message */

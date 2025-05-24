@@ -28,8 +28,7 @@
         },
         {
             "matches": ["https://web.whatsapp.com/*"],
-            "js": ["src/moduleraid.js", "src/util/whatsapp.js"],
-            "world": "MAIN"
+            "js": ["src/util/InjectModuleRaid.js"]
         },
         {
             "matches": ["https://web.whatsapp.com/*"],
@@ -37,7 +36,7 @@
         }
     ],
     "web_accessible_resources": [{
-        "resources": ["src/moduleraid.js", "src/util/whatsapp.js"],
+        "resources": ["src/util/InjectModuleRaid.js", "src/moduleraid.js", "src/util/whatsapp.js"],
         "matches": ["https://web.whatsapp.com/*"]
     }],
     "externally_connectable": {
