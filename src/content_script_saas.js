@@ -1,7 +1,7 @@
-window.addEventListener("test-hello-world", () => {
+window.addEventListener("wpp-b2b-connection", () => {
   chrome.runtime.sendMessage({ type: "HELLO_WORLD" }, (response) => {
     window.dispatchEvent(
-      new CustomEvent("hello-world-response", { detail: response })
+      new CustomEvent("wpp-b2b-connection-response", { detail: response })
     );
   });
 });
