@@ -13,13 +13,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === "SEND_MESSAGE") {
     const { number, message: text } = message;
 
-    const generateUniqueId = () => {
-      const timestamp = Date.now().toString(36);
-      const randomStr = Math.random().toString(36).substr(2, 5);
-      return timestamp + randomStr;
-    };
-
-    const uuid = generateUniqueId();
+    const uuid = WPP_Bridge_Utils.generateUniqueId();
 
     console.log(`📤 Enviando para ${number}: ${text}`);
 
@@ -32,7 +26,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     );
 
     sendResponse({ success: true, message: "Mensagem enviada com sucesso." });
-    
+
     return true;
   }
 });

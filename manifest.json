@@ -3,19 +3,31 @@
   "name": "WA Web Bridge",
   "version": "0.0.1",
   "description": "Send messages from your web apps directly to WhatsApp Web.",
-  "permissions": ["tabs"],
+  "permissions": [
+    "tabs"
+  ],
   "background": {
     "service_worker": "src/background.js",
     "type": "module"
   },
   "content_scripts": [
     {
-      "matches": ["https://web.whatsapp.com/*"],
-      "js": ["lib/InjectModules.js", "src/content_script_whatsapp.js"]
+      "matches": [
+        "https://web.whatsapp.com/*"
+      ],
+      "js": [
+        "lib/InjectModules.js",
+        "src/utils/helpers.js",
+        "src/content_script_whatsapp.js"
+      ]
     },
     {
-      "matches": ["http://localhost:5173/*"],
-      "js": ["src/content_script_saas.js"]
+      "matches": [
+        "http://localhost:5173/*"
+      ],
+      "js": [
+        "src/content_script_saas.js"
+      ]
     }
   ],
   "web_accessible_resources": [
@@ -23,13 +35,16 @@
       "resources": [
         "lib/InjectModules.js",
         "lib/moduleraid.js",
-        "lib/whatsapp.js",
-        "lib/jquery-3.7.0.min.js"
+        "lib/whatsapp.js"
       ],
-      "matches": ["https://web.whatsapp.com/*"]
+      "matches": [
+        "https://web.whatsapp.com/*"
+      ]
     }
   ],
   "externally_connectable": {
-    "matches": ["http://localhost/"]
+    "matches": [
+      "http://localhost/"
+    ]
   }
 }
