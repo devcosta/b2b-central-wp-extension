@@ -11,13 +11,18 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 
   if (message.type === "SEND_MESSAGE") {
-    const { number, message: text } = message;
+    const { number, message: text, media } = message;
+
+    // ... generated ID ...
 
     const uuid = WPP_Bridge_Utils.generateUniqueId();
 
-    console.log(`📤 Enviando para ${number}: ${text}`);
+    console.log(`📤 Enviando para ${number}: ${text} ${media ? `(Mídia presente)` : ''}`);
 
     const options = {};
+    if (media) {
+      options.media = media;
+    }
 
     document.dispatchEvent(
       new CustomEvent("whatsappContentToWhatsappJs", {
