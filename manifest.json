@@ -37,8 +37,10 @@
     {
       "resources": [
         "lib/InjectModules.js",
-        "lib/moduleraid.js",
-        "lib/whatsapp.js"
+        "lib/whatsapp.js",
+        "Injected/index.js",
+        "Injected/Store.js",
+        "Injected/Utils.js"
       ],
       "matches": [
         "https://web.whatsapp.com/*"
